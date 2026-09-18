@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | jrtoastyman.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-canvas: #050806;
+    --bg-panel: rgba(10, 16, 12, 0.75);
+    --border-color: rgba(0, 255, 102, 0.22);
+    --border-color-hover: rgba(0, 255, 102, 0.6);
+    --text-main: #e2e8f0;
+    --text-muted: #8fa397;
+    --text-light: #526f5d;
+    --accent-green: #00ff66;
+    --font-head: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
+    --shadow-glow: 0 0 15px rgba(0, 255, 102, 0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background-color: var(--bg-canvas); }
+
+  body {
+    background: var(--bg-canvas);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .grid-lines {
+    position: fixed;
+    inset: 0;
+    background-size: 60px 60px;
+    background-image: radial-gradient(rgba(0, 255, 102, 0.05) 1.2px, transparent 1.2px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .page-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hud-header, .hud-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-panel);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 8px;
+    box-shadow: var(--shadow-glow);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--accent-green);
+  }
+
+  .hud-header { margin-bottom: 2rem; }
+  .hud-footer { margin-top: 3rem; }
+
+  .header-left { display: flex; align-items: center; gap: 0.5rem; }
+
+  .pulse-indicator {
+    color: var(--accent-green);
+    animation: indicator-fade 1.5s infinite alternate ease-in-out;
+  }
+
+  @keyframes indicator-fade { 0% { opacity: 0.3; } 100% { opacity: 1; } }
+
+  .header-center, .center-item { color: var(--text-muted); font-weight: 500; }
+
+  .panel {
+    position: relative;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-glow);
+    padding: 2.4rem 2.2rem;
+  }
+
+  .doc-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    margin-bottom: 0.6rem;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-family: var(--font-mono);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--accent-green);
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+  }
+
+  .updated {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: var(--accent-green);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h2::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(0, 255, 102, 0.15);
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+  }
+
+  a {
+    color: var(--accent-green);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 255, 102, 0.3);
+    transition: all 0.25s ease;
+  }
+
+  a:hover {
+    color: #ffffff;
+    border-color: var(--accent-green);
+    text-shadow: 0 0 6px rgba(0, 255, 102, 0.5);
+  }
+
+  @media (max-width: 600px) {
+    .page-wrapper { padding: 1.2rem 1rem 3rem; }
+    .panel { padding: 1.6rem 1.3rem; }
+    .hud-header, .hud-footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-indicator { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-lines"></div>
+
+<div class="page-wrapper">
+
+  <div class="hud-header">
+    <div class="header-left"><span class="pulse-indicator">●</span> STATUS: LIVE</div>
+    <div class="header-center">TERMS_OF_SERVICE.SYS</div>
+    <div class="header-right">jrtoastyman.com</div>
+  </div>
+
+  <div class="panel">
+    <span class="doc-tag">// legal_doc</span>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: September 2026</p>
+
+    <p>jrtoastyman.com ("this site") is the personal landing page of an individual. It is published for personal, non-commercial purposes and is not intended for use by the public other than to view its content.</p>
+
+    <h2>Permitted use</h2>
+    <p>You may view the publicly available content of this site. No other use is authorized.</p>
+
+    <h2>Prohibited use</h2>
+    <p>Except for ordinary viewing of published content, any other use of this site is prohibited without the site owner's prior written consent. Prohibited use includes, without limitation: scraping, crawling, or automated data collection; attempting to access non-public areas, systems, credentials, or integrations associated with this site or its owner; interfering with or attempting to interfere with the operation, security, or availability of this site; using this site or any information obtained from it for commercial purposes; and any attempt to gain unauthorized access to any account, service, or system connected to or referenced by this site.</p>
+
+    <h2>No warranty</h2>
+    <p>This site and its content are provided "as is" and "as available," without warranties of any kind, express or implied, including but not limited to warranties of accuracy, completeness, availability, or fitness for a particular purpose.</p>
+
+    <h2>Limitation of liability; assumption of no liability for unauthorized use</h2>
+    <p>The site owner assumes no liability or responsibility whatsoever for any loss, damage, or claim of any kind arising out of or related to unauthorized use of this site, including but not limited to unauthorized access, use, or interference by any third party. To the fullest extent permitted by applicable law, the site owner disclaims all liability for any direct, indirect, incidental, consequential, or other damages arising from use of, or inability to use, this site, or from any unauthorized use of this site by any person.</p>
+
+    <h2>No public service offered</h2>
+    <p>Nothing on this site should be construed as an offer of a product, service, or account to members of the public. Any integrations, tools, or systems referenced on or connected to this site are operated solely for the personal use of the site owner.</p>
+
+    <h2>Changes to these terms</h2>
+    <p>These terms may be updated from time to time without prior notice. The version posted at this URL is the version currently in effect. Continued viewing of this site after changes are posted constitutes acceptance of the updated terms.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the State of Missouri, without regard to its conflict-of-laws principles, without conceding that any particular forum or jurisdiction has a claim to authority over a purely personal, non-commercial site.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms may be directed to the site owner through the contact information provided elsewhere on this site.</p>
+  </div>
+
+  <div class="hud-footer">
+    <div>DOC://TERMS</div>
+    <div class="center-item"><a href="/privacy-policy.html" style="border:none;">privacy-policy.html</a></div>
+    <div>EOF</div>
+  </div>
+
+</div>
+
+</body>
+</html>
